@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 import {
   __MEDIA_QUERY_BREAK_POINT,
   EXTRA_LARGE_DEVICES_MAX_WIDTH,
@@ -6,9 +6,8 @@ import {
   makeQuery,
   MEDIUM_DEVICES_MAX_WIDTH,
   SMALL_DEVICES_MAX_WIDTH
-} from "../media-query/Mobile";
-import {GUTTER} from "../index";
-
+} from "../..";
+import { GUTTER } from "../index";
 
 // with props use this:
 // ${props => mediaQueries("md")(`width: ${props.width}px`)}
@@ -38,7 +37,7 @@ const ContainerRoot = css`
   margin-left: auto;
 `;
 
-export const Container = styled.div<{fluid?: boolean}>`
+export const Container = styled.div<{ fluid?: boolean }>`
   ${props => (!props.fluid ? Media : null)};
   ${ContainerRoot};
 `;
