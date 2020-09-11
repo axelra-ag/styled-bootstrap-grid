@@ -1,20 +1,38 @@
 {
-  "name": "styled-bootstrap-grid",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "axelra-styled-bootstrap-grid",
+  "version": "0.0.4",
+  "description": "Re-implementation with styled-components of the bootstrap grid-layout system with some add-ons.",
+  "main": "dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/axelra-ag/styled-bootstrap-grid.git"
   },
-  "keywords": [],
+  "keywords": [
+    "styled-components",
+    "styled-boostrap",
+    "axelra",
+    "bootstrap",
+    "grid",
+    "grid-layout",
+    "styled-boostrap-grid",
+    "styled-boostrap-grid-system",
+    "styled-boostrap-grid-layout"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/axelra-ag/styled-bootstrap-grid/issues"
   },
-  "homepage": "https://github.com/axelra-ag/styled-bootstrap-grid#readme"
+  "homepage": "https://github.com/axelra-ag/styled-bootstrap-grid#readme",
+  "dependencies": {
+    "styled-components": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.3"
+  }
 }

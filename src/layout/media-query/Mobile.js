@@ -1,0 +1,30 @@
+"use strict";
+var _a;
+exports.__esModule = true;
+exports.makeQuery = exports.__MEDIA_QUERY_BREAK_POINT = exports.EXTRA_LARGE_DEVICES_MAX_WIDTH = exports.EXTRA_LARGE_DEVICES_BREAK_POINT = exports.LARGE_DEVICES_MAX_WIDTH = exports.LARGE_DEVICES_BREAK_POINT = exports.MEDIUM_DEVICES_MAX_WIDTH = exports.MEDIUM_DEVICES_BREAK_POINT = exports.SMALL_DEVICES_MAX_WIDTH = exports.SMALL_DEVICES_BREAK_POINT = void 0;
+exports.SMALL_DEVICES_BREAK_POINT = 576;
+exports.SMALL_DEVICES_MAX_WIDTH = 540;
+exports.MEDIUM_DEVICES_BREAK_POINT = 768;
+exports.MEDIUM_DEVICES_MAX_WIDTH = 720;
+exports.LARGE_DEVICES_BREAK_POINT = 992;
+exports.LARGE_DEVICES_MAX_WIDTH = 960;
+exports.EXTRA_LARGE_DEVICES_BREAK_POINT = 1200;
+exports.EXTRA_LARGE_DEVICES_MAX_WIDTH = 1140;
+var __MEDIA_QUERY_BREAK_POINT;
+(function (__MEDIA_QUERY_BREAK_POINT) {
+    __MEDIA_QUERY_BREAK_POINT["SMALL"] = "SMALL";
+    __MEDIA_QUERY_BREAK_POINT["MEDIUM"] = "MEDIUM";
+    __MEDIA_QUERY_BREAK_POINT["LARGE"] = "LARGE";
+    __MEDIA_QUERY_BREAK_POINT["EXTRA_LARGE"] = "EXTRA_LARGE";
+})(__MEDIA_QUERY_BREAK_POINT = exports.__MEDIA_QUERY_BREAK_POINT || (exports.__MEDIA_QUERY_BREAK_POINT = {}));
+var breaks = (_a = {},
+    _a[__MEDIA_QUERY_BREAK_POINT.SMALL] = exports.SMALL_DEVICES_BREAK_POINT,
+    _a[__MEDIA_QUERY_BREAK_POINT.MEDIUM] = exports.MEDIUM_DEVICES_BREAK_POINT,
+    _a[__MEDIA_QUERY_BREAK_POINT.LARGE] = exports.LARGE_DEVICES_BREAK_POINT,
+    _a[__MEDIA_QUERY_BREAK_POINT.EXTRA_LARGE] = exports.EXTRA_LARGE_DEVICES_BREAK_POINT,
+    _a);
+exports.makeQuery = function (key) {
+    return function (style) {
+        return "@media only screen and (min-width: " + breaks[key] + "px) { " + style + " }";
+    };
+};
