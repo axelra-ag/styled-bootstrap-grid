@@ -6,7 +6,7 @@ import {
   makeQuery,
   MEDIUM_DEVICES_MAX_WIDTH,
   SMALL_DEVICES_MAX_WIDTH
-} from "../..";
+} from "../../layout/media-query/Mobile";
 import { GUTTER } from "../index";
 
 // with props use this:
