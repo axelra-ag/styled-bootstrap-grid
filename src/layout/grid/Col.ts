@@ -31,26 +31,18 @@ const getMaxWidth = (t: ColAttribute) =>
 const getWidth = (t: ColAttribute) => (typeof t === "number" ? `100%` : "auto");
 
 const getMediaQuery = (
-  sm?: ColAttribute,
-  md?: ColAttribute,
-  lg?: ColAttribute,
-  xl?: ColAttribute
+  breakPoint: __MEDIA_QUERY_BREAK_POINT,
+  t?: ColAttribute
 ): string | null => {
-  const breakPoint = getBreakPoint(sm, md, lg, xl);
   if (!breakPoint) return null;
-  if (!sm && !md && !lg && !xl) return null;
-  if (
-    typeof sm === "boolean" ||
-    typeof md === "boolean" ||
-    typeof lg === "boolean" ||
-    typeof xl === "boolean"
-  ) {
+  if (!t) return null;
+  if (typeof t === "boolean") {
     return makeQuery(breakPoint)(SimpleCol);
   }
   return makeQuery(breakPoint)(`
-      flex: 0 0 ${getFlex((sm || md || lg || xl) as ColAttribute)}; 
-      max-width: ${getMaxWidth((sm || md || lg || xl) as ColAttribute)};
-      width: ${getWidth((sm || md || lg || xl) as ColAttribute)};  
+      flex: 0 0 ${getFlex(t as ColAttribute)}; 
+      max-width: ${getMaxWidth(t as ColAttribute)};
+      width: ${getWidth(t as ColAttribute)};  
   `);
 };
 
@@ -92,16 +84,20 @@ export const Col = styled.div<{
   md?: ColAttribute;
   lg?: ColAttribute;
   xl?: ColAttribute;
-  col?: number | boolean;
+  xs?: number | boolean;
   order?: number;
   offset?: number;
 }>`
-  ${({ sm, md, lg, xl }) => getMediaQuery(sm, md, lg, xl) || SimpleCol};
+  ${({ sm }) => getMediaQuery(__MEDIA_QUERY_BREAK_POINT.SMALL, sm)};
+  ${({ md }) => getMediaQuery(__MEDIA_QUERY_BREAK_POINT.MEDIUM, md)};
+  ${({ lg }) => getMediaQuery(__MEDIA_QUERY_BREAK_POINT.LARGE, lg)};
+  ${({ xl }) => getMediaQuery(__MEDIA_QUERY_BREAK_POINT.EXTRA_LARGE, xl)};
+  ${({ sm, md, lg, xl }) => !sm && !md && !lg && !xl && SimpleCol};
   ${({ sm, md, lg, xl, offset }) => computeOffset(sm, md, lg, xl, offset)};
-  ${({ col }) =>
-    col
-      ? typeof col === "number"
-        ? getDefaultColCSS(col as number)
+  ${({ xs }) =>
+    xs
+      ? typeof xs === "number"
+        ? getDefaultColCSS(xs as number)
         : SimpleCol
       : ""};
   ${({ order }) =>
