@@ -1,6 +1,6 @@
 {
   "name": "axelra-styled-bootstrap-grid",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Re-implementation with styled-components of the bootstrap grid-layout system with some add-ons.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -23,7 +23,7 @@
     "styled-boostrap-grid-system",
     "styled-boostrap-grid-layout"
   ],
-  "author": "",
+  "author": "Lucas Pelloni for Axelra AG",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/axelra-ag/styled-bootstrap-grid/issues"
