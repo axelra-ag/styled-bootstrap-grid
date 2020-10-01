@@ -1,3 +1,4 @@
+/*
 export { Col } from "./layout/grid/Col";
 export { Row } from "./layout/grid/Row";
 export { Container } from "./layout/grid/Container";
@@ -37,3 +38,4 @@ export {
   H6,
   P
 } from "./content/Typography";
+*/

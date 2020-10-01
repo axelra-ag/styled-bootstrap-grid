@@ -1,5 +1,6 @@
 import React from "react";
+import { Col } from "./layout/grid/Col";
 
 export const App = () => {
-  return <div>joasfojasf</div>;
+  return <Col>joasfojasf</Col>;
 };
