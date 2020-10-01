@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import { __MEDIA_QUERY_BREAK_POINT, makeQuery } from "../media-query/Mobile";
 import { GUTTER } from "../index";
+import { animated } from "react-spring";
 
 const NUMBER_OF_COLUMNS = 12;
 type ColAttribute = number | boolean | "auto";
@@ -79,6 +80,7 @@ const SimpleCol = css`
   min-width: 0;
   max-width: 100%;
 `;
+
 export const Col = styled.div<{
   sm?: ColAttribute;
   md?: ColAttribute;
@@ -106,3 +108,5 @@ export const Col = styled.div<{
   `}
   ${ColRoot};
 `;
+
+export const AnimatedCol = styled(animated(Col))``;
