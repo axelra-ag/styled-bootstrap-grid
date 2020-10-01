@@ -1,8 +1,7 @@
-/*
-export { Col } from "./layout/grid/Col";
-export { Row } from "./layout/grid/Row";
-export { Container } from "./layout/grid/Container";
-export { Flex } from "./layout/grid/Flex";
+export { Col, AnimatedCol } from "./layout/grid/Col";
+export { Row, AnimatedRow } from "./layout/grid/Row";
+export { Container, AnimatedContainer } from "./layout/grid/Container";
+export { Flex, AnimatedFlex } from "./layout/grid/Flex";
 export {
   SMALL_DEVICES_BREAK_POINT,
   SMALL_DEVICES_MAX_WIDTH,
@@ -13,7 +12,7 @@ export {
   LARGE_DEVICES_BREAK_POINT,
   MEDIUM_DEVICES_BREAK_POINT,
   makeQuery,
-  __MEDIA_QUERY_BREAK_POINT
+  __MEDIA_QUERY_BREAK_POINT,
 } from "./layout/media-query/Mobile";
 export { Spacer } from "./layout/spacer/Spacer";
 export {
@@ -22,7 +21,7 @@ export {
   ZIndexModal,
   ZIndexPopover,
   ZIndexSticky,
-  ZIndexTooltip
+  ZIndexTooltip,
 } from "./layout/z-index/ZIndex";
 export { SPACING, GUTTER } from "./layout/index";
 export {
@@ -36,6 +35,5 @@ export {
   H4,
   H5,
   H6,
-  P
+  P,
 } from "./content/Typography";
-*/
