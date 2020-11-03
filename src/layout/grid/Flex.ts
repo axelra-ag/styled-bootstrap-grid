@@ -1,9 +1,11 @@
 import styled from "styled-components";
+import { animated } from "react-spring";
 
 export const Flex = styled.div<{
   flex?: number;
   row?: boolean;
   column?: boolean;
+  wrap?: "wrap" | "wrap-reverse" | "nowrap" | boolean;
   align?:
     | "baseline"
     | "flex-start"
@@ -21,9 +23,28 @@ export const Flex = styled.div<{
     | "initial"
     | "inherit";
 }>`
-  flex: ${props => props.flex || 0};
-  display: ${props => (props.row || props.column ? "flex" : "block")};
-  flex-direction: ${props => (props.row ? "row" : "column")};
-  align-items: ${props => props.align || "flex-start"};
-  justify-content: ${props => props.justify || "flex-start"};
+  ${({ flex }) =>
+    flex &&
+    `flex: ${flex};
+  `};
+
+  ${({ wrap }) =>
+    wrap &&
+    `flex-wrap: ${typeof wrap === "boolean" ? "wrap" : wrap};
+  `};
+
+  ${({ align }) =>
+    align &&
+    `align-items: ${align};
+  `};
+
+  ${({ justify }) =>
+    justify &&
+    `justify-content: ${justify};
+  `};
+
+  display: ${(props) => (props.row || props.column ? "flex" : "block")};
+  flex-direction: ${(props) => (props.row ? "row" : "column")};
 `;
+
+export const AnimatedFlex = styled(animated(Flex))``;
