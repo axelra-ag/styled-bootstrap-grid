@@ -23,7 +23,10 @@ const breaks = {
   [__MEDIA_QUERY_BREAK_POINT.EXTRA_LARGE]: EXTRA_LARGE_DEVICES_BREAK_POINT
 };
 
-export const makeQuery = (key?: keyof typeof breaks, custom?: string) => {
+export const makeQuery = (
+  key?: keyof typeof breaks,
+  custom?: string | number
+) => {
   return (style: TemplateStringsArray | FlattenSimpleInterpolation | string) =>
     `@media only screen and (min-width: ${
       key ? breaks[key] : custom
