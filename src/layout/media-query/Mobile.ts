@@ -1,4 +1,4 @@
-import {FlattenSimpleInterpolation} from "styled-components";
+import { FlattenSimpleInterpolation } from "styled-components";
 
 export const SMALL_DEVICES_BREAK_POINT = 576;
 export const SMALL_DEVICES_MAX_WIDTH = 540;
@@ -23,7 +23,9 @@ const breaks = {
   [__MEDIA_QUERY_BREAK_POINT.EXTRA_LARGE]: EXTRA_LARGE_DEVICES_BREAK_POINT
 };
 
-export const makeQuery = (key: keyof typeof breaks) => {
+export const makeQuery = (key?: keyof typeof breaks, custom?: string) => {
   return (style: TemplateStringsArray | FlattenSimpleInterpolation | string) =>
-    `@media only screen and (min-width: ${breaks[key]}px) { ${style} }`;
+    `@media only screen and (min-width: ${
+      key ? breaks[key] : custom
+    }px) { ${style} }`;
 };
