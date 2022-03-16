@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import { __MEDIA_QUERY_BREAK_POINT, makeQuery } from "../media-query/Mobile";
 import { GUTTER } from "../index";
+import { Flex, FlexProps } from "./Flex";
 
 const NUMBER_OF_COLUMNS = 12;
 type ColAttribute = number | boolean | "auto";
@@ -71,6 +72,7 @@ const ColRoot = css`
   position: relative;
   padding: 0 ${GUTTER}px;
   width: 100%;
+  box-sizing: border-box;
 `;
 
 const SimpleCol = css`
@@ -80,7 +82,7 @@ const SimpleCol = css`
   max-width: 100%;
 `;
 
-export const Col = styled.div<{
+export type ColProps = {
   sm?: ColAttribute;
   md?: ColAttribute;
   lg?: ColAttribute;
@@ -88,7 +90,9 @@ export const Col = styled.div<{
   xs?: number | boolean;
   order?: number;
   offset?: number;
-}>`
+};
+
+export const Col = styled(Flex)<ColProps & FlexProps>`
   ${({ sm }) => getMediaQuery(__MEDIA_QUERY_BREAK_POINT.SMALL, sm)};
   ${({ md }) => getMediaQuery(__MEDIA_QUERY_BREAK_POINT.MEDIUM, md)};
   ${({ lg }) => getMediaQuery(__MEDIA_QUERY_BREAK_POINT.LARGE, lg)};
@@ -107,5 +111,3 @@ export const Col = styled.div<{
   `}
   ${ColRoot};
 `;
-
-

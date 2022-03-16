@@ -1,7 +1,7 @@
-export { Col } from "./layout/grid/Col";
+export { Col, ColProps } from "./layout/grid/Col";
 export { Row } from "./layout/grid/Row";
-export { Container } from "./layout/grid/Container";
-export { Flex } from "./layout/grid/Flex";
+export { Container, ContainerProps } from "./layout/grid/Container";
+export { Flex, FlexProps } from "./layout/grid/Flex";
 export {
   SMALL_DEVICES_BREAK_POINT,
   SMALL_DEVICES_MAX_WIDTH,

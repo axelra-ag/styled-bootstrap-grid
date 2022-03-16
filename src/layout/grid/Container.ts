@@ -35,9 +35,20 @@ const ContainerRoot = css`
   width: 100%;
   margin-right: auto;
   margin-left: auto;
+  box-sizing: border-box;
+  display: flex;
 `;
 
-export const Container = styled.div<{ fluid?: boolean }>`
+export type ContainerProps = {
+  fluid?: boolean;
+  fullViewPortHeight?: boolean;
+};
+
+export const Container = styled.div<ContainerProps>`
   ${(props) => (!props.fluid ? Media : null)};
+  ${({ fullViewPortHeight }) =>
+    fullViewPortHeight &&
+    `height: 100vh;
+  `};
   ${ContainerRoot};
 `;

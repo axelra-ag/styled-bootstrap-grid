@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Flex = styled.div<{
+export type FlexProps = {
   flex?: number;
   row?: boolean;
   column?: boolean;
@@ -21,7 +21,9 @@ export const Flex = styled.div<{
     | "space-around"
     | "initial"
     | "inherit";
-}>`
+};
+
+export const Flex = styled.div<FlexProps>`
   ${({ flex }) =>
     flex &&
     `flex: ${flex};
@@ -53,4 +55,5 @@ export const Flex = styled.div<{
     `display: flex;
      flex-direction: column; 
   `};
+  box-sizing: border-box;
 `;
