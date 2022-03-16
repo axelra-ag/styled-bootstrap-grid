@@ -8,7 +8,6 @@ import {
   SMALL_DEVICES_MAX_WIDTH,
 } from "../../layout/media-query/Mobile";
 import { GUTTER } from "../index";
-import { animated } from "react-spring";
 
 // with props use this:
 // ${props => mediaQueries("md")(`width: ${props.width}px`)}
@@ -42,5 +41,3 @@ export const Container = styled.div<{ fluid?: boolean }>`
   ${(props) => (!props.fluid ? Media : null)};
   ${ContainerRoot};
 `;
-
-export const AnimatedContainer = styled(animated(Container))``;

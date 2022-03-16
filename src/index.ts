@@ -1,7 +1,7 @@
-export { Col, AnimatedCol } from "./layout/grid/Col";
-export { Row, AnimatedRow } from "./layout/grid/Row";
-export { Container, AnimatedContainer } from "./layout/grid/Container";
-export { Flex, AnimatedFlex } from "./layout/grid/Flex";
+export { Col } from "./layout/grid/Col";
+export { Row } from "./layout/grid/Row";
+export { Container } from "./layout/grid/Container";
+export { Flex } from "./layout/grid/Flex";
 export {
   SMALL_DEVICES_BREAK_POINT,
   SMALL_DEVICES_MAX_WIDTH,

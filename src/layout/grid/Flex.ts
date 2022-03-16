@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { animated } from "react-spring";
 
 export const Flex = styled.div<{
   flex?: number;
@@ -47,4 +46,3 @@ export const Flex = styled.div<{
   flex-direction: ${(props) => (props.row ? "row" : "column")};
 `;
 
-export const AnimatedFlex = styled(animated(Flex))``;
