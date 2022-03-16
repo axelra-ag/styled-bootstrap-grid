@@ -42,7 +42,15 @@ export const Flex = styled.div<{
     `justify-content: ${justify};
   `};
 
-  display: ${(props) => (props.row || props.column ? "flex" : "block")};
-  flex-direction: ${(props) => (props.row ? "row" : "column")};
-`;
+  ${({ row }) =>
+    row &&
+    `display: flex;
+     flex-direction: row; 
+  `};
 
+  ${({ column }) =>
+    column &&
+    `display: flex;
+     flex-direction: column; 
+  `};
+`;
