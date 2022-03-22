@@ -8,6 +8,7 @@ import {
   SMALL_DEVICES_MAX_WIDTH,
 } from "../../layout/media-query/Mobile";
 import { GUTTER } from "../index";
+import { Flex, FlexProps } from "./Flex";
 
 // with props use this:
 // ${props => mediaQueries("md")(`width: ${props.width}px`)}
@@ -36,7 +37,6 @@ const ContainerRoot = css`
   margin-right: auto;
   margin-left: auto;
   box-sizing: border-box;
-  display: flex;
 `;
 
 export type ContainerProps = {
@@ -44,7 +44,7 @@ export type ContainerProps = {
   fullViewPortHeight?: boolean;
 };
 
-export const Container = styled.div<ContainerProps>`
+export const Container = styled(Flex)<ContainerProps & FlexProps>`
   ${(props) => (!props.fluid ? Media : null)};
   ${({ fullViewPortHeight }) =>
     fullViewPortHeight &&
