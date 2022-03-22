@@ -48,7 +48,7 @@ export const Container = styled(Flex)<ContainerProps & FlexProps>`
   ${(props) => (!props.fluid ? Media : null)};
   ${({ fullViewPortHeight }) =>
     fullViewPortHeight &&
-    `height: 100vh;
+    `min-height: 100vh;
   `};
   ${ContainerRoot};
 `;
