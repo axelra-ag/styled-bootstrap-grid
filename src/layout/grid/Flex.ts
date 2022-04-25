@@ -21,6 +21,8 @@ export type FlexProps = {
     | "space-around"
     | "initial"
     | "inherit";
+  relative?: boolean;
+  height?: string;
 };
 
 export const Flex = styled.div<FlexProps>`
@@ -54,6 +56,16 @@ export const Flex = styled.div<FlexProps>`
     column &&
     `display: flex;
      flex-direction: column; 
+  `};
+
+  ${({ relative }) =>
+      relative &&
+      `position: relative;
+  `};
+
+  ${({ height }) =>
+      height &&
+      `height: ${height};
   `};
   box-sizing: border-box;
 `;
