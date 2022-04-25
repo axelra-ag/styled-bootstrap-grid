@@ -1,6 +1,6 @@
 {
   "name": "axelra-styled-bootstrap-grid",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "description": "Re-implementation with styled-components of the bootstrap grid-layout system with some add-ons.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
