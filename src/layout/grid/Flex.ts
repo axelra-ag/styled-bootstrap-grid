@@ -68,6 +68,7 @@ export const makeFlexCSS = ({
                               height,
                               zIndex,
                             }: FlexProps) => css`
+  display: flex; 
   ${flex && `flex: ${flex}`};
   ${wrap && `flex-wrap: ${typeof wrap === "boolean" ? "wrap" : wrap}`};
   ${align && `align-items: ${align}`};
